@@ -9,7 +9,7 @@ def hello_world():
     if greeting:
         return "Hello, and %s!" % greeting
     else:
-        return "Hello! You can cause me to echo your favorite greeting by supplying a 'greeting' query param." 
+        return "Hello! You can cause me to echo your favorite greeting by supplying a 'greeting' query param. Get creative with it!" 
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
