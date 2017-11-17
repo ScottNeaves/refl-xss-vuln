@@ -15,6 +15,3 @@ RUN pipenv install --system
 
 # The app will run in the container on port 5000, need to expose that port
 # EXPOSE 5000
-
-# Start the gunicorn web server with our app
-CMD ["gunicorn", "--log-level", "debug", "--reload", "src.app:app", "--bind", "0.0.0.0:5000"]
