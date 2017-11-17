@@ -6,6 +6,6 @@ services:
     - "5000:5000"
     volumes:
     - ./app:/app
-    command: gunicorn -w 2 -t 3600 --bind 0.0.0.0:5000 src.app:app --reload
+    command: gunicorn -w 1 -t 3600 --bind 0.0.0.0:5000 src.app:app --reload
     stdin_open: true
     tty: true

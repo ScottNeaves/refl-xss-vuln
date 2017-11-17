@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    greeting = base64.b64decode(request.args.get('greeting')).decode('utf-8')
-    if greeting:
+    if request.args.get('greeting'):
+        greeting = base64.b64decode(request.args.get('greeting')).decode('utf-8')
         poorly_sanitized_greeting = greeting.replace("<script>", '').replace("</script>",'')
         return "<html>Hello, and %s</html>!" % poorly_sanitized_greeting
     else:
