@@ -6,6 +6,11 @@ services:
     - "5000:5000"
     volumes:
     - ./app:/app
-    command: gunicorn -w 1 -t 3600 --bind 0.0.0.0:5000 src.app:app --reload
+    command: python src/app.py
+    # Note: a more production-friendly start command would be as follows,
+    #   but the interactive debugging page doesn't show up when you use a
+    #   forking web server, which would make this challenge much harder. See
+    #   http://flask.pocoo.org/docs/0.12/quickstart/#debug-mode for details.
+    # command: gunicorn -w 1 -t 3600 --bind 0.0.0.0:5000 src.app:app --reload
     stdin_open: true
     tty: true
